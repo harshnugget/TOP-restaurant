@@ -6,23 +6,36 @@ export default function initialPageLoad() {
     // Initial load
     loadHomePage();
 
-    // Event listeners for tabs
+    // Add event listeners for navigation tabs
     const homeButton = document.querySelector("#home");
     const menuButton = document.querySelector("#menu");
     const aboutButton = document.querySelector("#about");
 
+    // Initialize home tab as active
+    homeButton.classList.add("active-tab");
+
     homeButton.addEventListener("click", () => {
+        deactivateAllButtons();
+        homeButton.classList.add("active-tab");
         loadHomePage();
-        console.log("Load Home page");
     });
 
     menuButton.addEventListener("click", () => {
+        deactivateAllButtons();
+        menuButton.classList.add("active-tab");
         loadMenuPage();
-        console.log("Load Menu page");
     });
 
     aboutButton.addEventListener("click", () => {
+        deactivateAllButtons();
+        aboutButton.classList.add("active-tab");
         loadAboutPage();
-        console.log("Load About page");
     });
+    
+    // Function to remove 'active-tab' class from all buttons
+    function deactivateAllButtons() {
+        [homeButton, menuButton, aboutButton].forEach(button => {
+        button.classList.remove("active-tab");
+        });
+    }
 }
