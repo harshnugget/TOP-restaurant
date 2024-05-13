@@ -93,3 +93,31 @@ nav button.active-tab a::after {
     color: #666;
     line-height: 1.5;
 }
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+#content .menu-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+#content .menu-item-description {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}

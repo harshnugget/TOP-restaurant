@@ -1,6 +1,6 @@
 import loadHomePage from "./home.js";
 import loadMenuPage from "./menu.js";
-import loadAboutPage from "./about.js";
+import loadContactPage from "./contact.js";
 
 export default function initialPageLoad() {
     // Initial load
@@ -9,7 +9,7 @@ export default function initialPageLoad() {
     // Add event listeners for navigation tabs
     const homeButton = document.querySelector("#home");
     const menuButton = document.querySelector("#menu");
-    const aboutButton = document.querySelector("#about");
+    const contactButton = document.querySelector("#contact");
 
     // Initialize home tab as active
     homeButton.classList.add("active-tab");
@@ -26,15 +26,15 @@ export default function initialPageLoad() {
         loadMenuPage();
     });
 
-    aboutButton.addEventListener("click", () => {
+    contactButton.addEventListener("click", () => {
         deactivateAllButtons();
-        aboutButton.classList.add("active-tab");
-        loadAboutPage();
+        contactButton.classList.add("active-tab");
+        loadContactPage();
     });
     
     // Function to remove 'active-tab' class from all buttons
     function deactivateAllButtons() {
-        [homeButton, menuButton, aboutButton].forEach(button => {
+        [homeButton, menuButton, contactButton].forEach(button => {
         button.classList.remove("active-tab");
         });
     }
